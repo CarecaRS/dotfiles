@@ -1,0 +1,98 @@
+
+{
+  "position": "top",
+  "modules-left": ["hyprland/workspaces", "disk#home", "disk#root", "memory", "cpu", "custom/gpu"],
+  "modules-center": ["clock"],
+  "modules-right": ["battery", "temperature", "network", "backlight", "pulseaudio"],
+
+  "clock": {
+    "format": "<span foreground='#d8dee9'>  </span>{:%A %d %H:%M}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 9
+    },
+    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
+    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
+    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
+    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
+    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
+
+
+  "network": {
+    "format-wifi": "<span size='13000' foreground='#d08770'>  </span>{essid}",
+    "format-ethernet": "<span size='13000' foreground='#d08770'>󰤭  </span> Disconnected",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "<span size='13000' foreground='#d08770'>  </span>Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+  },
+
+
+  "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+
+
+  "cpu": {
+      "format": "CPU {usage}% {icon}",
+      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  },
+
+
+  "custom/gpu": {
+      "format": "GPU {}% {icon}",
+      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+      "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+      "interval": 1
+  },
+
+
+  "temperature": {
+      "critical-threshold": 80,
+      "format": "{temperatureC}°C {icon}",
+      "format-icons": ["", "", ""],
+      "interval": 5
+  },
+
+
+  "memory": {
+      "format": "Mem {}%"
+  },
+
+
+  "backlight": {
+      "format": "{percent}% {icon}",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
+
+  "disk#root": {
+      "interval": 900,
+      "format": "R {free}",
+      "path": "/",
+      "unit": "GiB"
+  },
+
+  "disk#home": {
+      "interval": 900,
+      "format": "H {free}",
+      "path": "/home/",
+      "unit": "GiB"
+  }
+
+}
+
