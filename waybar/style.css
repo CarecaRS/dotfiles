@@ -128,6 +128,10 @@ button:hover {
     border-bottom: 1px solid @green;
 }
 
+#custom-updates {
+	background-color: transparent;
+}
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left>widget:first-child>#workspaces {
     margin-left: 0;
