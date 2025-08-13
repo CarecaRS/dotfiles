@@ -2,7 +2,7 @@
 {
   "position": "top",
   "modules-left": ["hyprland/workspaces", "disk#home", "disk#root", "memory", "cpu", "custom/gpu"],
-  "modules-center": ["clock"],
+  "modules-center": ["clock", "custom/updates"],
   "modules-right": ["battery", "temperature", "network", "backlight", "pulseaudio"],
 
   "clock": {
