@@ -129,6 +129,12 @@ button:hover {
 }
 
 #custom-updates {
+  color: #61afef;
+	background-color: transparent;
+}
+
+#custom-weather {
+  color: @snow;
 	background-color: transparent;
 }
 

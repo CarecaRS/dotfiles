@@ -2,7 +2,7 @@
 {
   "position": "top",
   "modules-left": ["hyprland/workspaces", "disk#home", "disk#root", "memory", "cpu", "custom/gpu"],
-  "modules-center": ["clock", "custom/updates"],
+  "modules-center": ["clock", "custom/weather", "custom/updates"],
   "modules-right": ["battery", "temperature", "network", "backlight", "pulseaudio"],
 
   "clock": {
@@ -98,12 +98,21 @@
     "format": " {icon} {text}",
     "return-type": "json",
     "format-icons": {
-        "has-updates": "󱍷",
+        "has-updates": "",
         "updated": "󰂪"
     },
     "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates --interval-seconds 300 --network-interval-seconds 300 --tooltip-align-columns --color-semver-updates"
-  }
+    "exec": "waybar-module-pacman-updates --interval-seconds 300 --network-interval-seconds 300 --tooltip-align-columns --color-semver-updates --no-zero-inputs"
+  },
+
+
+  "custom/weather": {
+    "format": "{}°C",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --hide-conditions --lang pt --date-format '%d/%m'",
+    "return-type": "json"
+  },
 
 
 }
