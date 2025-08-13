@@ -35,5 +35,8 @@ Primeiro tem que desligar o gdm `sudo systemctl disable gdm.service` e aí sim l
 ## # Hyprland and hypr-ecosystem
 Aqui constam entao apenas os arquivos do `Hyprland`.
 
+### Módulo updates pacman/AUR
+Necessário instalar pacote aur `waybar-module-pacman-updates-git`
+
 ## # Steam
 Se nao for instalado no automático, precisa do pacote `lib32-nvidia-utils` para utilizar certinho a GPU Nvidia.
