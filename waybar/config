@@ -102,7 +102,7 @@
         "updated": "󰂪"
     },
     "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates --interval-seconds 300 --network-interval-seconds 300"
+    "exec": "waybar-module-pacman-updates --interval-seconds 300 --network-interval-seconds 300 --tooltip-align-columns --color-semver-updates"
   }
 
 
