@@ -32,8 +32,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -115,12 +115,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Atalho de saída! Tem certez
 #=========================================#
 
 # Apps carregados na inicialização
-exec setxkbmap -model abnt2 -layout br -variant abnt2 -option grp:alt_caps_toggle
+exec setxkbmap -layout es abnt2 -option grp:alt_caps_toggle
+#exec setxkbmap -model abnt2 -layout br -variant abnt2 -option grp:alt_caps_toggle
 exec nitrogen --restore
 exec picom -bf &
 exec redshift-gtk &
 exec numlockx on
-#exec_always xautolock -detectsleep -time 10 -locker 'i3lock -i ~/Imagens/Wallpapers/locked.png -p default -e -f'
+exec_always xautolock -detectsleep -time 5 -locker 'i3lock -i ~/Pictures/.locked.jpg -p default -e -f'
 exec_always $HOME/.config/polybar/launch.sh &
 
 # Bordas das janelas
@@ -164,6 +165,6 @@ bindsym $mod+Shift+s exec --no-startup-id steam
 bindsym $mod+Shift+d exec --no-startup-id discord
 bindsym $mod+s exec --no-startup-id spotify
 bindsym $mod+k exec setxkbmap -layout es -option grp:alt_caps_toggle
-bindsym $mod+l exec i3lock -i ~/Imagens/Wallpapers/locked.png -p default -e -f
+bindsym $mod+l exec i3lock -i ~/Pictures/.locked.jpg -p default -e -f
 bindsym $mod+n exec standard-notes
 bindsym --release Print exec flameshot gui
