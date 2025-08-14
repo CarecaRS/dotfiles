@@ -110,7 +110,7 @@
     "format": "{}°C",
     "tooltip": true,
     "interval": 3600,
-    "exec": "wttrbar --hide-conditions --lang pt --date-format '%d/%m'",
+    "exec": "wttrbar --hide-conditions --custom-indicator '{areaName} {ICON} {FeelsLikeC}' --location Lisbon --lang pt --date-format '%d/%m'",
     "return-type": "json"
   },
 
