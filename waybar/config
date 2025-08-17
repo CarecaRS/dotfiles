@@ -1,9 +1,9 @@
 
 {
   "position": "top",
-  "modules-left": ["hyprland/workspaces", "disk#home", "disk#root", "memory", "cpu", "custom/gpu"],
+  "modules-left": ["hyprland/workspaces", "disk#home", "disk#root", "custom/gpu", "cpu", "memory"],
   "modules-center": ["clock", "custom/weather", "custom/updates"],
-  "modules-right": ["battery", "temperature", "network", "backlight", "pulseaudio"],
+  "modules-right": ["network", "temperature", "battery", "backlight", "pulseaudio"],
 
   "clock": {
     "format": "<span foreground='#d8dee9'>  </span>{:%A %d %H:%M}",
@@ -29,11 +29,12 @@
 
 
   "network": {
-    "format-wifi": "<span size='13000' foreground='#d08770'>  </span>{essid}",
+    "format-wifi": "<span size='13000' foreground='#d08770'>  </span><span size='11000'>{bandwidthUpBytes}</span> ⇅ <span size='11000'>{bandwidthDownBytes}</span>",
     "format-ethernet": "<span size='13000' foreground='#d08770'>󰤭  </span> Disconnected",
-    "format-linked": "{ifname} (No IP) ",
+    "format-linked": "{ifname} (No IP)  {bandwidthUpBytes} ⇅ {bandwidthDownBytes}",
     "format-disconnected": "<span size='13000' foreground='#d08770'>  </span>Disconnected",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+    "tooltip-format-wifi": "SSID: {essid}\nSignal Strenght: {signalStrength}%",
+    "interval": 2
   },
 
 
@@ -109,7 +110,7 @@
   "custom/weather": {
     "format": "{}°C",
     "tooltip": true,
-    "interval": 3600,
+    "interval": 900,
     "exec": "wttrbar --hide-conditions --custom-indicator '{areaName} {ICON} {FeelsLikeC}' --location Lisbon --lang pt --date-format '%d/%m'",
     "return-type": "json"
   },
