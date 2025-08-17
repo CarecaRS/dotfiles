@@ -65,7 +65,8 @@
   "temperature": {
       "critical-threshold": 80,
       "format": "{temperatureC}°C ",
-      "interval": 5
+      "interval": 5,
+      "tooltip-format": "Temperatura do notebook",
   },
 
 
@@ -76,7 +77,8 @@
 
   "backlight": {
       "format": "{percent}% {icon}",
-      "format-icons": ["", "", "", "", "", "", "", "", ""]
+      "format-icons": ["", "", "", "", "", "", "", "", ""],
+      "tooltip-format": "Brilho da tela",
   },
 
 
