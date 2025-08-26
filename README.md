@@ -38,6 +38,9 @@ Se nao for instalado no automático, precisa do pacote `lib32-nvidia-utils` para
 ## # Hyprland and hypr-ecosystem
 Aqui constam os arquivos do `Hyprland`.
 
+## # waybar - bongocat
+Instalação pelo AUR, configuração segue o [github wayland-bongocat](https://github.com/saatvik333/wayland-bongocat)
+
 ### Módulo updates pacman/AUR
 Necessário instalar pacote AUR `waybar-module-pacman-updates-git`
 
