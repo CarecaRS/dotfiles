@@ -32,6 +32,8 @@ Tem um git 'rofi-themes-collection' que precisa baixar, ali estão os temas.
 ## # SDDM
 Primeiro tem que desligar o gdm `sudo systemctl disable gdm.service` e aí sim ligar o sddm `sudo systemctl enable sddm.service`. Estou usando o tema `chili` (disponível no AUR ou no GitHub). O arquivo de configuração é simples e fica em `/etc/sddm.conf.d/` -- mantive uma cópia aqui na pasta `sddm` só para ter mesmo, tem só o numlock alterado. Mesmo assim algumas configurações precisam ser feitas na mão: foto do avatar em local apropriado, configuração do locale e do horário, etc. Veja essas coisas na página do SDDM no Arch.
 
+A exibição da data no greeting aparece 'dd of mmmm', para alterar esse "of" se altera o arquivo `theme.conf`, localizado em `/usr/share/sddm/[theme]`.
+
 ## # Steam
 Se nao for instalado no automático, precisa do pacote `lib32-nvidia-utils` para utilizar certinho a GPU Nvidia.
 
